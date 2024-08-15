@@ -1,20 +1,14 @@
-const removeFromArray = function(arr, ...manyMoreArgs) {
+const removeFromArray = function(arr, ...args) {
+    
+    const removedArray = [];
 
-    for(const arg of manyMoreArgs){
-        if (arg != Number){
-            for(let i = 0; i < arr.length; i++){
-                if(arg === arr[i]){
-                    arr.splice(arg,arg+1);
-                }
-            }
-        } else if (arg == Number){
-            arr.splice(arg,arg+1);
-        } else {
-            break;
+    arr.forEach((item) => {
+        if(!args.includes(item)){
+            removedArray.push(item);
         }
-    }
+    });
 
-    return arr;
+    return removedArray;
 
 };
 
